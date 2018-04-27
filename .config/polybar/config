@@ -21,7 +21,7 @@ alert = #bd2c40
 
 
 [bar/left]
-monitor = HDMI2
+monitor = HDMI-1
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -45,8 +45,8 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Ubuntu Mono derivative Powerline
-font-1 = MaterialDesignIcons
+font-0 = UbuntuMono
+font-1 = MaterialIcons
 font-2 = sans
 ;font-0 = fixed:pixelsize=10;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
@@ -70,7 +70,7 @@ modules-right = filesystem memory cpu
 
 
 [bar/right]
-monitor = VGA1
+monitor = HDMI-2
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -94,8 +94,8 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Ubuntu Mono derivative Powerline
-font-1 = MaterialDesignIcons
+font-0 = UbuntuMono
+font-1 = MaterialIcons
 font-2 = sans
 ;font-0 = fixed:pixelsize=10;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
@@ -131,7 +131,7 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
 
@@ -148,7 +148,7 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
-mount-1 = /home
+;mount-1 = /home
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
@@ -208,18 +208,18 @@ label-urgent = %index%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+#   [module/mpd]
+#   type = internal/mpd
+#   format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+#   icon-prev = 
+#   icon-stop = 
+#   icon-play = 
+#   icon-pause = 
+#   icon-next = 
 
-label-song-maxlen = 25
-label-song-ellipsis = true
+#   label-song-maxlen = 25
+#   label-song-ellipsis = true
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -246,7 +246,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 1
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage%%
@@ -264,7 +264,7 @@ ramp-coreload-7 = █
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
@@ -303,13 +303,13 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = eth0
+interface = eno1
 interval = 1
 
 format-connected-underline = #55aa55
-format-connected-prefix = " "
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected =  %downspeed%  %upspeed%
+label-connected =  %downspeed%  %upspeed%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -327,7 +327,7 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = ""
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
@@ -340,7 +340,7 @@ format-volume = <bar-volume>
 label-volume = VOL
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
+format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
@@ -402,9 +402,9 @@ label = %temperature%
 label-warn = %temperature%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
@@ -412,7 +412,7 @@ type = custom/menu
 
 format-spacing = 1
 
-label-open = 
+label-open = 
 label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
